@@ -1,0 +1,43 @@
+# Prompt at [ https://www.reddit.com/r/beginnerprojects/comments/19jwi6/project_pythagorean_triples_checker/ ]
+"""
+Right triangles have certain properties. Right triangles have 90 degree angles as 1/3 of their 180 total.
+One property is that the hypotenuse, while always the longest side of a Triangle,
+is mathematically linked to its other 2 sides.
+	a^2 + b^2 = C^2
+		c = sqrt(a^2 + b^2)
+The Hypotenuse is equal to the square root of the other 2 sides' squares.
+Pythagorean Theorem. 
+
+Our program should either:
+	ask user to input 2 sides and return its P.T
+	Check to see any particular pattern of numbers that would create a whole, integer P.T
+	
+P.T is 3 positive, whole integers. CHECK FOR:
+	are num1, num2, and TheEquation positive?
+	are num1, num2, and TheEquation 
+	
+"""
+import math								#this is actually always loaded, but still must be called with math.()
+
+
+Num1 = ''
+Num2 = ''
+
+def TriplesChecker():
+	if (float(Num1)).is_integer() == True and (float(Num2)).is_integer() == True:
+		print "This is a Triple!"
+	else:
+		print "This is not a Triple."
+	
+def ThePrompt():
+	Num1 = input("Give me the length of the first side.\n> ")
+	Num2 = input("Give me the length of the second side.\n> ")
+	
+	TheEquation = math.sqrt(Num1**2 + Num2**2)
+	print "With a side of length %d, and another side of %d, the hypotenuse of this right triangle would be..." % (Num1, Num2)
+	print TheEquation
+	print "Incidentally, Num1 is %r and Num2 is %r" % (Num1, Num2)
+	print "But is it a Triple..?"
+	TriplesChecker()
+	
+ThePrompt()
